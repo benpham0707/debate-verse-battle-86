@@ -30,8 +30,6 @@ export const WelcomeScreen = ({ onJoinRoom, onJoinPrivateRoom }: WelcomeScreenPr
     const newRoomId = generateRoomId();
     if (onJoinPrivateRoom) {
       onJoinPrivateRoom(newRoomId, playerName);
-    } else {
-      onJoinRoom(newRoomId, playerName);
     }
   };
 
@@ -39,8 +37,6 @@ export const WelcomeScreen = ({ onJoinRoom, onJoinPrivateRoom }: WelcomeScreenPr
     if (!playerName.trim() || !roomId.trim()) return;
     if (onJoinPrivateRoom) {
       onJoinPrivateRoom(roomId.toUpperCase(), playerName);
-    } else {
-      onJoinRoom(roomId.toUpperCase(), playerName);
     }
   };
 
