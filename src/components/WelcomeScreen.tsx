@@ -62,9 +62,8 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
           <div className="space-y-6">
             {/* Player Name Input */}
             <div className="space-y-3">
-              <label className="text-xl font-bold text-white bg-comic-red px-4 py-2 comic-border inline-block transform -rotate-1 relative">
+              <label className="text-lg font-bold text-comic-dark">
                 ENTER YOUR BATTLE NAME
-                <div className="comic-effect comic-effect-boom comic-effect-small -top-2 -right-2" style={{ animationDelay: '0.3s' }}></div>
               </label>
               <Input
                 value={playerName}
