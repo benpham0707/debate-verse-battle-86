@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -39,7 +40,7 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
     <div className="min-h-screen flex items-center justify-center p-4 relative">
       {/* Large comic effects background */}
       <div className="absolute inset-0 w-full h-full opacity-100 z-0 -translate-y-20">
-        <img src="/lovable-uploads/c995c279-baf5-483d-9f87-45f88508f154.png" alt="Comic Effects" className="w-full h-full object-cover" />
+        <img src="/lovable-uploads/5cab711d-d198-47a4-96e9-3ee9512cce2f.png" alt="Comic Effects" className="w-full h-full object-cover" />
       </div>
 
       {/* BANG! effect positioned bigger and much lower in the left side */}
@@ -149,3 +150,4 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
     </div>
   );
 };
+
