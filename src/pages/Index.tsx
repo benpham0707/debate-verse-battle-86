@@ -3,20 +3,27 @@ import React, { useState } from 'react';
 import { WelcomeScreen } from '@/components/WelcomeScreen';
 import { GameLobby } from '@/components/GameLobby';
 import { DebateRoom } from '@/components/DebateRoom';
+import { WaitingRoom } from '@/components/WaitingRoom';
 import { NewsDropdown } from '@/components/NewsDropdown';
 import { DirectoryDropdown } from '@/components/DirectoryDropdown';
 
-export type GameState = 'welcome' | 'lobby' | 'debate';
+export type GameState = 'welcome' | 'lobby' | 'waiting' | 'debate';
 
 const Index = () => {
   const [gameState, setGameState] = useState<GameState>('welcome');
   const [roomId, setRoomId] = useState<string>('');
   const [playerName, setPlayerName] = useState<string>('');
 
-  const handleJoinRoom = (room: string, name: string) => {
+  const handleJoinMatchmaking = (room: string, name: string) => {
     setRoomId(room);
     setPlayerName(name);
     setGameState('lobby');
+  };
+
+  const handleJoinPrivateRoom = (room: string, name: string) => {
+    setRoomId(room);
+    setPlayerName(name);
+    setGameState('waiting');
   };
 
   const handleStartDebate = () => {
@@ -47,7 +54,10 @@ const Index = () => {
 
       <div className="min-h-screen relative z-10 pt-16">
         {gameState === 'welcome' && (
-          <WelcomeScreen onJoinRoom={handleJoinRoom} />
+          <WelcomeScreen 
+            onJoinRoom={handleJoinMatchmaking}
+            onJoinPrivateRoom={handleJoinPrivateRoom}
+          />
         )}
         
         {gameState === 'lobby' && (
@@ -56,6 +66,15 @@ const Index = () => {
             playerName={playerName}
             onStartDebate={handleStartDebate}
             onBack={handleBackToWelcome}
+          />
+        )}
+
+        {gameState === 'waiting' && (
+          <WaitingRoom 
+            roomId={roomId}
+            playerName={playerName}
+            onLeaveRoom={handleBackToWelcome}
+            onStartDebate={handleStartDebate}
           />
         )}
         

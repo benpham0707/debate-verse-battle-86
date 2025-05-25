@@ -7,9 +7,10 @@ import { Gamepad2, Users, Zap, Swords } from 'lucide-react';
 
 interface WelcomeScreenProps {
   onJoinRoom: (roomId: string, playerName: string) => void;
+  onJoinPrivateRoom?: (roomId: string, playerName: string) => void;
 }
 
-export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
+export const WelcomeScreen = ({ onJoinRoom, onJoinPrivateRoom }: WelcomeScreenProps) => {
   const [playerName, setPlayerName] = useState('');
   const [roomId, setRoomId] = useState('');
 
@@ -27,12 +28,20 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
   const handleCreateRoom = () => {
     if (!playerName.trim()) return;
     const newRoomId = generateRoomId();
-    onJoinRoom(newRoomId, playerName);
+    if (onJoinPrivateRoom) {
+      onJoinPrivateRoom(newRoomId, playerName);
+    } else {
+      onJoinRoom(newRoomId, playerName);
+    }
   };
 
-  const handleJoinRoom = () => {
+  const handleJoinPrivateRoomClick = () => {
     if (!playerName.trim() || !roomId.trim()) return;
-    onJoinRoom(roomId.toUpperCase(), playerName);
+    if (onJoinPrivateRoom) {
+      onJoinPrivateRoom(roomId.toUpperCase(), playerName);
+    } else {
+      onJoinRoom(roomId.toUpperCase(), playerName);
+    }
   };
 
   return (
@@ -95,7 +104,7 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
                   maxLength={6}
                 />
                 <Button
-                  onClick={handleJoinRoom}
+                  onClick={handleJoinPrivateRoomClick}
                   disabled={!playerName.trim() || !roomId.trim()}
                   className="w-full bg-comic-purple hover:bg-comic-purple/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
                 >
