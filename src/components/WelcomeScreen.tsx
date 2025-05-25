@@ -44,8 +44,8 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
               DeBATTLE
             </h1>
-            {/* Big bang effect next to title */}
-            <div className="w-16 h-16 opacity-90 animate-pulse mb-4" style={{ animationDelay: '0.5s' }}>
+            {/* Big bang effect next to title - 5x bigger */}
+            <div className="w-80 h-80 opacity-90 animate-pulse mb-4" style={{ animationDelay: '0.5s' }}>
               <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
             </div>
           </div>
