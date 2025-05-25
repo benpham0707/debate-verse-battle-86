@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -136,12 +135,12 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
 
   return (
     <div className="min-h-screen p-4 relative">
-      {/* Comic Effects Background */}
-      <div className="absolute top-10 right-20 comic-explosion w-12 h-12 opacity-30"></div>
-      <div className="absolute bottom-20 left-10 comic-zap w-10 h-12 opacity-40"></div>
-      <div className="absolute top-1/3 left-1/4 comic-pow w-8 h-6 opacity-25"></div>
-      <div className="comic-star-burst top-20 left-20" style={{ animationDelay: '0.5s' }}></div>
-      <div className="comic-star-burst bottom-40 right-40" style={{ animationDelay: '1.5s' }}></div>
+      {/* Comic Text Effects Background */}
+      <div className="comic-boom comic-small top-10 right-20" style={{ animationDelay: '0.5s' }}></div>
+      <div className="comic-zap bottom-20 left-10" style={{ animationDelay: '1.2s' }}></div>
+      <div className="comic-pow comic-medium top-1/3 left-1/4" style={{ animationDelay: '0.8s' }}></div>
+      <div className="comic-wham comic-small bottom-40 right-40" style={{ animationDelay: '1.8s' }}></div>
+      <div className="comic-kapow comic-small top-20 left-20" style={{ animationDelay: '2.2s' }}></div>
 
       <div className="max-w-6xl mx-auto space-y-4 relative z-10">
         {/* Header */}
@@ -153,7 +152,6 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Exit Battle
-            <div className="comic-star-burst -top-1 -right-1" style={{ animationDelay: '2s' }}></div>
           </Button>
           
           <div className="text-center relative">
@@ -162,12 +160,10 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
               <div className="comic-impact-lines"></div>
             </Badge>
             <h2 className="font-bold text-xl text-comic-dark">{topic}</h2>
-            <div className="comic-burst w-6 h-6 absolute -top-2 -right-2 opacity-50"></div>
           </div>
           
           <div className="relative">
             <DebateTimer timeRemaining={timeRemaining} phase={currentPhase} />
-            <div className="comic-zap w-6 h-8 absolute -bottom-2 -right-2 opacity-60"></div>
           </div>
         </div>
 
@@ -182,7 +178,8 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                 </Badge>
               </div>
               <HealthBar health={player.health} maxHealth={100} />
-              <div className="comic-star-burst top-2 right-2" style={{ animationDelay: `${index * 0.5}s` }}></div>
+              {index === 0 && <div className="comic-pow comic-small top-2 right-2" style={{ animationDelay: '1.5s' }}></div>}
+              {index === 1 && <div className="comic-zap comic-small top-2 right-2" style={{ animationDelay: '2s' }}></div>}
             </Card>
           ))}
         </div>
@@ -205,7 +202,7 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
               {!isMuted && <div className="comic-impact-lines"></div>}
             </Button>
           </div>
-          <div className="comic-explosion w-8 h-8 absolute -top-2 -left-2 opacity-40"></div>
+          <div className="comic-kapow comic-small -top-2 -left-2" style={{ animationDelay: '0.7s' }}></div>
         </Card>
 
         {/* Chat Area */}
@@ -249,7 +246,7 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                 </Button>
               </div>
             </div>
-            <div className="comic-pow w-6 h-4 absolute -bottom-1 -right-1 opacity-50"></div>
+            <div className="comic-wham comic-small -bottom-1 -right-1" style={{ animationDelay: '1.3s' }}></div>
           </Card>
 
           {/* Battle Stats */}
@@ -259,13 +256,11 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
               <div className="p-3 bg-comic-green/20 comic-border relative">
                 <p className="text-sm font-bold text-comic-dark">Current Phase</p>
                 <p className="text-lg font-bold text-comic-green">{currentPhase.toUpperCase()}</p>
-                <div className="comic-star-burst top-1 right-1" style={{ animationDelay: '0.3s' }}></div>
               </div>
               
               <div className="p-3 bg-comic-blue/20 comic-border relative">
                 <p className="text-sm font-bold text-comic-dark">Time Left</p>
                 <p className="text-lg font-bold text-comic-blue">{timeRemaining}s</p>
-                <div className="comic-zap w-4 h-5 absolute top-0 right-0 opacity-60"></div>
               </div>
               
               <div className="p-3 bg-comic-purple/20 comic-border">
@@ -279,12 +274,12 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                   <p className="text-lg font-bold text-comic-red">
                     {players[0].health > players[1].health ? players[0].name : players[1].name}
                   </p>
-                  <div className="comic-explosion w-8 h-8 absolute -top-2 -right-2 opacity-70"></div>
+                  <div className="comic-boom comic-small -top-2 -right-2" style={{ animationDelay: '0.5s' }}></div>
                   <div className="comic-impact-lines"></div>
                 </div>
               )}
             </div>
-            <div className="comic-burst w-10 h-10 absolute -top-2 -left-2 opacity-30"></div>
+            <div className="comic-pow comic-small -top-2 -left-2" style={{ animationDelay: '1.8s' }}></div>
           </Card>
         </div>
       </div>

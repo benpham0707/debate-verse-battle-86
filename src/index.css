@@ -202,114 +202,154 @@
     to { opacity: 0.8; transform: scale(1.05); }
   }
 
-  /* New Comic Effects */
-  .comic-burst {
-    position: relative;
-    background: radial-gradient(circle, #FFD600 0%, #FF6D00 50%, #FF1744 100%);
-    border: 4px solid #000;
-    box-shadow: 0 0 20px rgba(255, 23, 68, 0.5);
-    transform: rotate(-2deg);
-  }
-
-  .comic-burst::before {
-    content: '';
+  /* Comic Book Text Effects */
+  .comic-pow {
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: 
-      conic-gradient(from 0deg, transparent 0deg, #FFD600 30deg, transparent 60deg),
-      conic-gradient(from 120deg, transparent 0deg, #FF1744 30deg, transparent 60deg),
-      conic-gradient(from 240deg, transparent 0deg, #0066FF 30deg, transparent 60deg);
-    z-index: -1;
-    animation: burst-rotation 3s linear infinite;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #000;
+    background: #FFD600;
+    padding: 8px 16px;
+    border: 4px solid #000;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    text-shadow: 3px 3px 0px #FFF, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
+    box-shadow: 4px 4px 0px #000, 8px 8px 0px rgba(0,0,0,0.3);
+    animation: comic-pop 3s ease-in-out infinite;
+    z-index: 10;
   }
 
-  @keyframes burst-rotation {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  .comic-pow::before {
+    content: 'POW!';
   }
 
-  .comic-explosion {
-    position: relative;
-    background: radial-gradient(circle, #FFFFFF 20%, #FFD600 40%, #FF1744 80%);
-    border: 5px solid #000;
-    border-radius: 50%;
-    box-shadow: 
-      0 0 0 5px #FFD600,
-      0 0 0 10px #000,
-      0 0 20px rgba(255, 23, 68, 0.7);
-    animation: explosion-pulse 1.5s ease-in-out infinite;
+  .comic-boom {
+    position: absolute;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #FFF;
+    background: #FF1744;
+    padding: 12px 20px;
+    border: 4px solid #000;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 25%, 90% 50%, 100% 75%, 90% 100%, 10% 100%, 0% 75%, 10% 50%, 0% 25%);
+    text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
+    box-shadow: 6px 6px 0px #000, 12px 12px 0px rgba(0,0,0,0.4);
+    animation: comic-boom-anim 4s ease-in-out infinite;
+    z-index: 10;
   }
 
-  @keyframes explosion-pulse {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    25% { transform: scale(1.1) rotate(2deg); }
-    50% { transform: scale(1.05) rotate(-1deg); }
-    75% { transform: scale(1.08) rotate(1deg); }
+  .comic-boom::before {
+    content: 'BOOM!';
   }
 
   .comic-zap {
-    position: relative;
-    background: linear-gradient(45deg, #FFD600, #FFFFFF, #FFD600);
+    position: absolute;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #000;
+    background: #00FF00;
+    padding: 6px 12px;
     border: 3px solid #000;
-    clip-path: polygon(50% 0%, 80% 35%, 100% 35%, 75% 70%, 85% 100%, 50% 80%, 15% 100%, 25% 70%, 0% 35%, 20% 35%);
-    box-shadow: 0 0 15px rgba(255, 214, 0, 0.8);
-    animation: zap-flicker 0.8s ease-in-out infinite alternate;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    text-shadow: 2px 2px 0px #FFF, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
+    box-shadow: 3px 3px 0px #000, 6px 6px 0px rgba(0,0,0,0.3);
+    animation: comic-zap-anim 2.5s ease-in-out infinite;
+    z-index: 10;
   }
 
-  @keyframes zap-flicker {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0.8; transform: scale(1.05); }
+  .comic-zap::before {
+    content: 'ZAP!';
   }
 
-  .comic-pow {
-    position: relative;
-    background: 
-      radial-gradient(circle at 30% 30%, #FFD600 0%, transparent 50%),
-      radial-gradient(circle at 70% 70%, #FF1744 0%, transparent 50%),
-      linear-gradient(45deg, #FF1744, #FFD600);
+  .comic-wham {
+    position: absolute;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #FFF;
+    background: #8E24AA;
+    padding: 10px 18px;
     border: 4px solid #000;
-    box-shadow: 
-      inset 0 0 20px rgba(255, 255, 255, 0.3),
-      0 0 25px rgba(255, 23, 68, 0.6);
-    animation: pow-bounce 2s ease-in-out infinite;
+    clip-path: polygon(0% 20%, 20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%);
+    text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
+    box-shadow: 5px 5px 0px #000, 10px 10px 0px rgba(0,0,0,0.3);
+    animation: comic-wham-anim 3.5s ease-in-out infinite;
+    z-index: 10;
   }
 
-  @keyframes pow-bounce {
-    0%, 100% { transform: scale(1) rotate(-1deg); }
-    50% { transform: scale(1.1) rotate(1deg); }
+  .comic-wham::before {
+    content: 'WHAM!';
   }
 
-  .comic-star-burst {
+  .comic-kapow {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #FFD600;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    animation: star-twinkle 2s ease-in-out infinite;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #000;
+    background: #FF6D00;
+    padding: 8px 14px;
+    border: 3px solid #000;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 70% 100%, 30% 100%, 0% 30%);
+    text-shadow: 2px 2px 0px #FFF, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
+    box-shadow: 4px 4px 0px #000, 8px 8px 0px rgba(0,0,0,0.3);
+    animation: comic-kapow-anim 2.8s ease-in-out infinite;
+    z-index: 10;
   }
 
-  @keyframes star-twinkle {
-    0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
-    50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+  .comic-kapow::before {
+    content: 'KAPOW!';
   }
 
-  .comic-impact-lines {
-    position: absolute;
-    inset: 0;
-    background: 
-      linear-gradient(45deg, transparent 45%, #000 47%, #000 53%, transparent 55%),
-      linear-gradient(-45deg, transparent 45%, #000 47%, #000 53%, transparent 55%),
-      linear-gradient(90deg, transparent 45%, #000 47%, #000 53%, transparent 55%),
-      linear-gradient(0deg, transparent 45%, #000 47%, #000 53%, transparent 55%);
-    opacity: 0.3;
-    animation: impact-flash 0.6s ease-in-out infinite;
+  @keyframes comic-pop {
+    0%, 100% { transform: scale(1) rotate(-2deg); opacity: 0.8; }
+    50% { transform: scale(1.1) rotate(2deg); opacity: 1; }
   }
 
-  @keyframes impact-flash {
-    0%, 100% { opacity: 0.1; }
-    50% { opacity: 0.4; }
+  @keyframes comic-boom-anim {
+    0%, 100% { transform: scale(1) rotate(1deg); opacity: 0.9; }
+    33% { transform: scale(1.05) rotate(-1deg); opacity: 1; }
+    66% { transform: scale(0.95) rotate(1deg); opacity: 0.95; }
+  }
+
+  @keyframes comic-zap-anim {
+    0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.85; }
+    50% { transform: scale(1.08) rotate(1deg); opacity: 1; }
+  }
+
+  @keyframes comic-wham-anim {
+    0%, 100% { transform: scale(1) rotate(2deg); opacity: 0.9; }
+    25% { transform: scale(1.03) rotate(-1deg); opacity: 1; }
+    75% { transform: scale(0.98) rotate(1deg); opacity: 0.95; }
+  }
+
+  @keyframes comic-kapow-anim {
+    0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.8; }
+    40% { transform: scale(1.06) rotate(1deg); opacity: 1; }
+    80% { transform: scale(0.96) rotate(-1deg); opacity: 0.9; }
+  }
+
+  /* Smaller versions for subtle effects */
+  .comic-small {
+    font-size: 1.2rem;
+    padding: 4px 8px;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0px #000, 4px 4px 0px rgba(0,0,0,0.2);
+  }
+
+  .comic-medium {
+    font-size: 1.8rem;
+    padding: 6px 12px;
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0px #000, 6px 6px 0px rgba(0,0,0,0.25);
+  }
+
+  .comic-large {
+    font-size: 3rem;
+    padding: 16px 24px;
+    border: 5px solid #000;
+    box-shadow: 8px 8px 0px #000, 16px 16px 0px rgba(0,0,0,0.4);
   }
 }

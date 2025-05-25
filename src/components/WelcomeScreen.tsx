@@ -37,17 +37,13 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
-      {/* Comic Effects Scattered Around */}
-      <div className="absolute top-20 left-10 comic-explosion w-16 h-16 opacity-60"></div>
-      <div className="absolute top-32 right-20 comic-zap w-12 h-16 opacity-70"></div>
-      <div className="absolute bottom-40 left-16 comic-pow w-20 h-14 opacity-50"></div>
-      <div className="absolute bottom-20 right-32 comic-burst w-18 h-18 opacity-60"></div>
-      
-      {/* Scattered Star Bursts */}
-      <div className="comic-star-burst top-40 right-40" style={{ animationDelay: '0.5s' }}></div>
-      <div className="comic-star-burst bottom-60 left-32" style={{ animationDelay: '1s' }}></div>
-      <div className="comic-star-burst top-60 left-60" style={{ animationDelay: '1.5s' }}></div>
-      <div className="comic-star-burst bottom-32 right-16" style={{ animationDelay: '2s' }}></div>
+      {/* Comic Text Effects */}
+      <div className="comic-boom comic-medium top-16 left-16" style={{ animationDelay: '0.5s' }}></div>
+      <div className="comic-zap top-32 right-20" style={{ animationDelay: '1.2s' }}></div>
+      <div className="comic-pow comic-small bottom-40 left-20" style={{ animationDelay: '0.8s' }}></div>
+      <div className="comic-wham comic-small bottom-24 right-32" style={{ animationDelay: '1.8s' }}></div>
+      <div className="comic-kapow top-1/4 right-1/3" style={{ animationDelay: '2.2s' }}></div>
+      <div className="comic-pow comic-medium bottom-1/3 left-1/4" style={{ animationDelay: '1.5s' }}></div>
 
       <div className="w-full max-w-md space-y-8 animate-fade-in-up relative z-10">
         {/* Title */}
@@ -59,9 +55,6 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
           <p className="text-xl text-comic-dark font-bold">
             AI-Judged Real-Time Debate Arena
           </p>
-          
-          {/* Comic effect behind title */}
-          <div className="absolute -top-4 -left-4 comic-burst w-32 h-16 opacity-30 -z-10"></div>
         </div>
 
         {/* Main Card */}
@@ -69,9 +62,9 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
           <div className="space-y-6">
             {/* Player Name Input */}
             <div className="space-y-3">
-              <label className="text-lg font-bold text-comic-dark bg-comic-yellow px-3 py-1 comic-border inline-block transform -rotate-1 relative">
-                Enter Your Battle Name
-                <div className="comic-star-burst -top-2 -right-2" style={{ animationDelay: '0.3s' }}></div>
+              <label className="text-xl font-bold text-white bg-comic-red px-4 py-2 comic-border inline-block transform -rotate-1 relative">
+                ENTER YOUR BATTLE NAME
+                <div className="comic-boom comic-small -top-2 -right-2" style={{ animationDelay: '0.3s' }}></div>
               </label>
               <Input
                 value={playerName}
@@ -102,7 +95,7 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
               </div>
             </div>
 
-            {/* Friend Play Options */}
+            {/* Private Room Options */}
             <div className="space-y-3">
               <div className="space-y-2">
                 <Input
@@ -120,21 +113,18 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
                   <Users className="mr-2 h-5 w-5" />
                   JOIN PRIVATE ROOM
                 </Button>
+                
+                <Button
+                  onClick={handleCreateRoom}
+                  disabled={!playerName.trim()}
+                  className="w-full bg-comic-blue hover:bg-comic-blue/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
+                >
+                  <Gamepad2 className="mr-2 h-5 w-5" />
+                  CREATE PRIVATE ROOM
+                </Button>
               </div>
-
-              <Button
-                onClick={handleCreateRoom}
-                disabled={!playerName.trim()}
-                className="w-full bg-comic-blue hover:bg-comic-blue/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
-              >
-                <Gamepad2 className="mr-2 h-5 w-5" />
-                CREATE PRIVATE ROOM
-              </Button>
             </div>
           </div>
-          
-          {/* Comic effect on card */}
-          <div className="absolute -bottom-2 -right-2 comic-zap w-8 h-10 opacity-40"></div>
         </Card>
 
         {/* Feature Cards */}
@@ -143,14 +133,14 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             <Zap className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">AI-Powered Judging</h3>
             <p className="text-sm text-comic-dark">GPT-4 scores your arguments in real-time</p>
-            <div className="comic-star-burst top-2 right-2" style={{ animationDelay: '0.8s' }}></div>
+            <div className="comic-zap comic-small top-2 right-2" style={{ animationDelay: '0.8s' }}></div>
           </div>
           
           <div className="bg-comic-green comic-border p-4 transform rotate-1 relative">
             <Users className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">Health-Based Combat</h3>
             <p className="text-sm text-comic-dark">Lose HP based on debate performance</p>
-            <div className="comic-explosion w-6 h-6 absolute -top-1 -right-1 opacity-50"></div>
+            <div className="comic-kapow comic-small -top-1 -right-1" style={{ animationDelay: '1.3s' }}></div>
           </div>
         </div>
       </div>
