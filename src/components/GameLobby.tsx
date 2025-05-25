@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -51,14 +50,6 @@ export const GameLobby = ({ roomId, playerName, onStartDebate, onBack }: GameLob
 
   return (
     <div className="min-h-screen p-4 relative">
-      {/* Bang effects for lobby */}
-      <div className="absolute top-16 left-10 w-12 h-12 opacity-70 animate-pulse" style={{ animationDelay: '0.5s' }}>
-        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-      </div>
-      <div className="absolute top-32 right-16 w-10 h-10 opacity-80 animate-pulse" style={{ animationDelay: '1.5s' }}>
-        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-      </div>
-      
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -73,10 +64,6 @@ export const GameLobby = ({ roomId, playerName, onStartDebate, onBack }: GameLob
           
           <div className="text-center relative">
             <h1 className="font-bold text-4xl text-comic-dark mb-2">BATTLE LOBBY</h1>
-            {/* Bang effect next to title */}
-            <div className="absolute -top-2 -right-6 w-8 h-8 opacity-90 animate-pulse" style={{ animationDelay: '0.8s' }}>
-              <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-            </div>
             <div className="flex items-center justify-center space-x-2">
               <Badge className="bg-comic-blue text-white font-bold text-lg px-4 py-2">
                 ROOM: {roomId}
@@ -98,11 +85,6 @@ export const GameLobby = ({ roomId, playerName, onStartDebate, onBack }: GameLob
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Players Panel */}
           <Card className="comic-border bg-white p-6 transform -rotate-1 relative">
-            {/* Bang effect on players card */}
-            <div className="absolute -top-2 -right-2 w-8 h-8 opacity-75 animate-pulse" style={{ animationDelay: '1.2s' }}>
-              <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-            </div>
-            
             <div className="flex items-center mb-4">
               <Users className="h-6 w-6 text-comic-blue mr-2" />
               <h2 className="text-2xl font-bold text-comic-dark">COMBATANTS</h2>
@@ -132,11 +114,6 @@ export const GameLobby = ({ roomId, playerName, onStartDebate, onBack }: GameLob
 
           {/* Topic & Settings Panel */}
           <Card className="comic-border bg-white p-6 transform rotate-1 relative">
-            {/* Bang effect on topic card */}
-            <div className="absolute -top-2 -left-2 w-8 h-8 opacity-75 animate-pulse" style={{ animationDelay: '1.8s' }}>
-              <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-            </div>
-            
             <div className="flex items-center mb-4">
               <Target className="h-6 w-6 text-comic-red mr-2" />
               <h2 className="text-2xl font-bold text-comic-dark">BATTLE TOPIC</h2>
@@ -187,11 +164,6 @@ export const GameLobby = ({ roomId, playerName, onStartDebate, onBack }: GameLob
 
         {/* Game Rules */}
         <Card className="comic-border bg-comic-yellow/20 p-6 relative">
-          {/* Bang effect on rules card */}
-          <div className="absolute top-2 right-4 w-6 h-6 opacity-70 animate-pulse" style={{ animationDelay: '2.2s' }}>
-            <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-          </div>
-          
           <h3 className="text-xl font-bold text-comic-dark mb-4 flex items-center">
             <Clock className="mr-2 h-5 w-5" />
             BATTLE RULES
@@ -212,14 +184,6 @@ export const GameLobby = ({ roomId, playerName, onStartDebate, onBack }: GameLob
 
         {/* Start Button */}
         <div className="text-center relative">
-          {/* Bang effects around start button */}
-          <div className="absolute -top-4 -left-8 w-10 h-10 opacity-80 animate-pulse" style={{ animationDelay: '0.3s' }}>
-            <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-          </div>
-          <div className="absolute -top-4 -right-8 w-10 h-10 opacity-80 animate-pulse" style={{ animationDelay: '0.7s' }}>
-            <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-          </div>
-          
           <Button
             onClick={onStartDebate}
             disabled={!canStartDebate}
