@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Spider-Verse Comic Colors
+				comic: {
+					red: '#FF1744',
+					blue: '#0066FF', 
+					yellow: '#FFD600',
+					pink: '#FF0080',
+					purple: '#8E24AA',
+					green: '#00E676',
+					orange: '#FF6D00',
+					dark: '#121212',
+					light: '#FFFFFF'
 				}
 			},
 			borderRadius: {
@@ -84,11 +97,40 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'comic-zoom': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-in-left': {
+					'0%': { transform: 'translateX(-100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'fade-in-up': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 5px rgba(255, 23, 68, 0.5)' },
+					'50%': { boxShadow: '0 0 20px rgba(255, 23, 68, 1)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'comic-zoom': 'comic-zoom 2s ease-in-out infinite',
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'slide-in-left': 'slide-in-left 0.5s ease-out',
+				'fade-in-up': 'fade-in-up 0.5s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+			},
+			fontFamily: {
+				'comic': ['Comic Neue', 'cursive'],
+				'bold': ['Fredoka One', 'cursive']
 			}
 		}
 	},
