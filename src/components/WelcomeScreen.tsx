@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -37,26 +36,11 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative">
-      {/* Large comic effects background */}
-      <div className="absolute inset-0 w-full h-full opacity-100 z-0 -translate-y-20">
-        <img src="/lovable-uploads/5cab711d-d198-47a4-96e9-3ee9512cce2f.png" alt="Comic Effects" className="w-full h-full object-cover" />
-      </div>
-
-      {/* BANG! effect positioned bigger and much lower in the left side */}
-      <div className="absolute top-[600px] left-2 w-80 h-80 opacity-80 animate-pulse transform -rotate-12 z-0">
-        <img src="/lovable-uploads/06fc5a3e-58db-4a85-9c36-d2604465ea15.png" alt="BANG!" className="w-full h-full object-contain" />
-      </div>
-
-      {/* BANG! effect mirrored on the right side */}
-      <div className="absolute top-[600px] right-2 w-80 h-80 opacity-80 animate-pulse transform -rotate-12 z-0">
-        <img src="/lovable-uploads/06fc5a3e-58db-4a85-9c36-d2604465ea15.png" alt="BANG!" className="w-full h-full object-contain" />
-      </div>
-
-      <div className="w-full max-w-md space-y-8 animate-fade-in-up relative z-10">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-md space-y-8 animate-fade-in-up">
         {/* Title */}
-        <div className="text-center relative">
-          <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
+        <div className="text-center">
+          <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block">
             DeBATTLE
           </h1>
           <p className="text-xl text-comic-dark font-bold">
@@ -65,7 +49,7 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
         </div>
 
         {/* Main Card */}
-        <Card className="comic-border bg-white p-6 transform rotate-1 relative">
+        <Card className="comic-border bg-white p-6 transform rotate-1">
           <div className="space-y-6">
             {/* Player Name Input */}
             <div className="space-y-3">
@@ -85,7 +69,7 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             <Button
               onClick={handleJoinMatchmaking}
               disabled={!playerName.trim()}
-              className="w-full bg-comic-red hover:bg-comic-red/80 text-white font-bold text-xl py-4 comic-border transform hover:scale-105 transition-transform relative"
+              className="w-full bg-comic-red hover:bg-comic-red/80 text-white font-bold text-xl py-4 comic-border transform hover:scale-105 transition-transform"
             >
               <Swords className="mr-2 h-6 w-6" />
               JOIN DEBATTLE
@@ -101,7 +85,7 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             </div>
 
             {/* Private Room Options */}
-            <div className="space-y-3 relative">
+            <div className="space-y-3">
               <div className="space-y-2">
                 <Input
                   value={roomId}
@@ -134,13 +118,13 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
         {/* Feature Cards */}
         <div className="grid grid-cols-1 gap-4 text-center">
-          <div className="bg-comic-yellow comic-border p-4 transform -rotate-1 relative">
+          <div className="bg-comic-yellow comic-border p-4 transform -rotate-1">
             <Zap className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">AI-Powered Judging</h3>
             <p className="text-sm text-comic-dark">GPT-4 scores your arguments in real-time</p>
           </div>
           
-          <div className="bg-comic-green comic-border p-4 transform rotate-1 relative">
+          <div className="bg-comic-green comic-border p-4 transform rotate-1">
             <Users className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">Health-Based Combat</h3>
             <p className="text-sm text-comic-dark">Lose HP based on debate performance</p>
@@ -150,4 +134,3 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
     </div>
   );
 };
-
