@@ -37,13 +37,13 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
-      {/* Comic Text Effects */}
-      <div className="comic-boom comic-medium top-16 left-16" style={{ animationDelay: '0.5s' }}></div>
-      <div className="comic-zap top-32 right-20" style={{ animationDelay: '1.2s' }}></div>
-      <div className="comic-pow comic-small bottom-40 left-20" style={{ animationDelay: '0.8s' }}></div>
-      <div className="comic-wham comic-small bottom-24 right-32" style={{ animationDelay: '1.8s' }}></div>
-      <div className="comic-kapow top-1/4 right-1/3" style={{ animationDelay: '2.2s' }}></div>
-      <div className="comic-pow comic-medium bottom-1/3 left-1/4" style={{ animationDelay: '1.5s' }}></div>
+      {/* Comic Effects */}
+      <div className="comic-effect comic-effect-boom comic-effect-medium top-16 left-16" style={{ animationDelay: '0.5s' }}></div>
+      <div className="comic-effect comic-effect-zap top-32 right-20" style={{ animationDelay: '1.2s' }}></div>
+      <div className="comic-effect comic-effect-pow comic-effect-small bottom-40 left-20" style={{ animationDelay: '0.8s' }}></div>
+      <div className="comic-effect comic-effect-starburst comic-effect-small bottom-24 right-32" style={{ animationDelay: '1.8s' }}></div>
+      <div className="comic-effect comic-effect-explosion top-1/4 right-1/3" style={{ animationDelay: '2.2s' }}></div>
+      <div className="comic-effect comic-effect-pow comic-effect-medium bottom-1/3 left-1/4" style={{ animationDelay: '1.5s' }}></div>
 
       <div className="w-full max-w-md space-y-8 animate-fade-in-up relative z-10">
         {/* Title */}
@@ -64,7 +64,7 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             <div className="space-y-3">
               <label className="text-xl font-bold text-white bg-comic-red px-4 py-2 comic-border inline-block transform -rotate-1 relative">
                 ENTER YOUR BATTLE NAME
-                <div className="comic-boom comic-small -top-2 -right-2" style={{ animationDelay: '0.3s' }}></div>
+                <div className="comic-effect comic-effect-boom comic-effect-small -top-2 -right-2" style={{ animationDelay: '0.3s' }}></div>
               </label>
               <Input
                 value={playerName}
@@ -133,14 +133,14 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             <Zap className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">AI-Powered Judging</h3>
             <p className="text-sm text-comic-dark">GPT-4 scores your arguments in real-time</p>
-            <div className="comic-zap comic-small top-2 right-2" style={{ animationDelay: '0.8s' }}></div>
+            <div className="comic-effect comic-effect-zap comic-effect-small top-2 right-2" style={{ animationDelay: '0.8s' }}></div>
           </div>
           
           <div className="bg-comic-green comic-border p-4 transform rotate-1 relative">
             <Users className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">Health-Based Combat</h3>
             <p className="text-sm text-comic-dark">Lose HP based on debate performance</p>
-            <div className="comic-kapow comic-small -top-1 -right-1" style={{ animationDelay: '1.3s' }}></div>
+            <div className="comic-effect comic-effect-explosion comic-effect-small -top-1 -right-1" style={{ animationDelay: '1.3s' }}></div>
           </div>
         </div>
       </div>

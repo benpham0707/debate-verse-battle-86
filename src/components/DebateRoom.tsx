@@ -135,12 +135,12 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
 
   return (
     <div className="min-h-screen p-4 relative">
-      {/* Comic Text Effects Background */}
-      <div className="comic-boom comic-small top-10 right-20" style={{ animationDelay: '0.5s' }}></div>
-      <div className="comic-zap bottom-20 left-10" style={{ animationDelay: '1.2s' }}></div>
-      <div className="comic-pow comic-medium top-1/3 left-1/4" style={{ animationDelay: '0.8s' }}></div>
-      <div className="comic-wham comic-small bottom-40 right-40" style={{ animationDelay: '1.8s' }}></div>
-      <div className="comic-kapow comic-small top-20 left-20" style={{ animationDelay: '2.2s' }}></div>
+      {/* Comic Effects Background */}
+      <div className="comic-effect comic-effect-boom comic-effect-small top-10 right-20" style={{ animationDelay: '0.5s' }}></div>
+      <div className="comic-effect comic-effect-zap bottom-20 left-10" style={{ animationDelay: '1.2s' }}></div>
+      <div className="comic-effect comic-effect-pow comic-effect-medium top-1/3 left-1/4" style={{ animationDelay: '0.8s' }}></div>
+      <div className="comic-effect comic-effect-starburst comic-effect-small bottom-40 right-40" style={{ animationDelay: '1.8s' }}></div>
+      <div className="comic-effect comic-effect-explosion comic-effect-small top-20 left-20" style={{ animationDelay: '2.2s' }}></div>
 
       <div className="max-w-6xl mx-auto space-y-4 relative z-10">
         {/* Header */}
@@ -178,8 +178,8 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                 </Badge>
               </div>
               <HealthBar health={player.health} maxHealth={100} />
-              {index === 0 && <div className="comic-pow comic-small top-2 right-2" style={{ animationDelay: '1.5s' }}></div>}
-              {index === 1 && <div className="comic-zap comic-small top-2 right-2" style={{ animationDelay: '2s' }}></div>}
+              {index === 0 && <div className="comic-effect comic-effect-pow comic-effect-small top-2 right-2" style={{ animationDelay: '1.5s' }}></div>}
+              {index === 1 && <div className="comic-effect comic-effect-zap comic-effect-small top-2 right-2" style={{ animationDelay: '2s' }}></div>}
             </Card>
           ))}
         </div>
@@ -202,7 +202,7 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
               {!isMuted && <div className="comic-impact-lines"></div>}
             </Button>
           </div>
-          <div className="comic-kapow comic-small -top-2 -left-2" style={{ animationDelay: '0.7s' }}></div>
+          <div className="comic-effect comic-effect-explosion comic-effect-small -top-2 -left-2" style={{ animationDelay: '0.7s' }}></div>
         </Card>
 
         {/* Chat Area */}
@@ -246,7 +246,7 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                 </Button>
               </div>
             </div>
-            <div className="comic-wham comic-small -bottom-1 -right-1" style={{ animationDelay: '1.3s' }}></div>
+            <div className="comic-effect comic-effect-starburst comic-effect-small -bottom-1 -right-1" style={{ animationDelay: '1.3s' }}></div>
           </Card>
 
           {/* Battle Stats */}
@@ -274,12 +274,12 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                   <p className="text-lg font-bold text-comic-red">
                     {players[0].health > players[1].health ? players[0].name : players[1].name}
                   </p>
-                  <div className="comic-boom comic-small -top-2 -right-2" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="comic-effect comic-effect-boom comic-effect-small -top-2 -right-2" style={{ animationDelay: '0.5s' }}></div>
                   <div className="comic-impact-lines"></div>
                 </div>
               )}
             </div>
-            <div className="comic-pow comic-small -top-2 -left-2" style={{ animationDelay: '1.8s' }}></div>
+            <div className="comic-effect comic-effect-pow comic-effect-small -top-2 -left-2" style={{ animationDelay: '1.8s' }}></div>
           </Card>
         </div>
       </div>
