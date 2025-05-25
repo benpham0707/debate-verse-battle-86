@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -36,8 +37,8 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
-      {/* BANG! effect positioned in upper left negative space */}
-      <div className="absolute top-16 left-8 w-40 h-40 opacity-80 animate-pulse transform -rotate-12 z-0">
+      {/* BANG! effect positioned bigger and lower in the left side */}
+      <div className="absolute top-32 left-4 w-56 h-56 opacity-80 animate-pulse transform -rotate-12 z-0">
         <img src="/lovable-uploads/06fc5a3e-58db-4a85-9c36-d2604465ea15.png" alt="BANG!" className="w-full h-full object-contain" />
       </div>
 
