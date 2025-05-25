@@ -17,20 +17,20 @@ interface DirectoryDropdownProps {
 export const DirectoryDropdown = ({ playerName }: DirectoryDropdownProps) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="comic-border bg-gradient-to-r from-comic-purple to-comic-pink text-white px-4 py-2 font-bold text-sm hover:from-comic-pink hover:to-comic-purple transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+      <DropdownMenuTrigger className="comic-border bg-gradient-to-r from-comic-purple to-comic-pink text-white px-4 py-2 font-bold text-sm hover:from-comic-pink hover:to-comic-purple transition-all duration-300 transform hover:scale-105 flex items-center gap-2 rounded-xl">
         <User className="h-4 w-4" />
         {playerName || 'PLAYER'}
         <ChevronDown className="h-4 w-4" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-64 comic-border bg-white/95 backdrop-blur-sm z-50">
-        <DropdownMenuLabel className="text-comic-dark font-bold text-lg flex items-center gap-2">
+      <DropdownMenuContent className="w-72 comic-border bg-white/95 backdrop-blur-sm z-50 rounded-2xl p-2">
+        <DropdownMenuLabel className="text-comic-dark font-bold text-lg flex items-center gap-2 px-3 py-2">
           <User className="h-5 w-5 text-comic-purple" />
           Player Menu
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-comic-dark/20" />
+        <DropdownMenuSeparator className="bg-comic-dark/30 mx-2" />
         
-        <DropdownMenuItem className="p-3 hover:bg-comic-purple/10 transition-colors cursor-pointer">
-          <div className="flex items-center gap-3 w-full">
+        <DropdownMenuItem className="p-0 m-1 cursor-pointer">
+          <div className="flex items-center gap-3 w-full p-3 hover:bg-comic-purple/10 transition-colors rounded-xl border-2 border-comic-purple/20 hover:border-comic-purple/40">
             <User className="h-5 w-5 text-comic-purple" />
             <div>
               <div className="font-bold text-comic-dark">Profile</div>
@@ -39,8 +39,8 @@ export const DirectoryDropdown = ({ playerName }: DirectoryDropdownProps) => {
           </div>
         </DropdownMenuItem>
         
-        <DropdownMenuItem className="p-3 hover:bg-comic-blue/10 transition-colors cursor-pointer">
-          <div className="flex items-center gap-3 w-full">
+        <DropdownMenuItem className="p-0 m-1 cursor-pointer">
+          <div className="flex items-center gap-3 w-full p-3 hover:bg-comic-blue/10 transition-colors rounded-xl border-2 border-comic-blue/20 hover:border-comic-blue/40">
             <History className="h-5 w-5 text-comic-blue" />
             <div>
               <div className="font-bold text-comic-dark">Match History</div>
@@ -49,8 +49,8 @@ export const DirectoryDropdown = ({ playerName }: DirectoryDropdownProps) => {
           </div>
         </DropdownMenuItem>
         
-        <DropdownMenuItem className="p-3 hover:bg-comic-green/10 transition-colors cursor-pointer">
-          <div className="flex items-center gap-3 w-full">
+        <DropdownMenuItem className="p-0 m-1 cursor-pointer">
+          <div className="flex items-center gap-3 w-full p-3 hover:bg-comic-green/10 transition-colors rounded-xl border-2 border-comic-green/20 hover:border-comic-green/40">
             <Book className="h-5 w-5 text-comic-green" />
             <div>
               <div className="font-bold text-comic-dark">Leaderboards</div>
@@ -59,8 +59,8 @@ export const DirectoryDropdown = ({ playerName }: DirectoryDropdownProps) => {
           </div>
         </DropdownMenuItem>
         
-        <DropdownMenuItem className="p-3 hover:bg-comic-orange/10 transition-colors cursor-pointer">
-          <div className="flex items-center gap-3 w-full">
+        <DropdownMenuItem className="p-0 m-1 cursor-pointer">
+          <div className="flex items-center gap-3 w-full p-3 hover:bg-comic-orange/10 transition-colors rounded-xl border-2 border-comic-orange/20 hover:border-comic-orange/40">
             <List className="h-5 w-5 text-comic-orange" />
             <div>
               <div className="font-bold text-comic-dark">Settings</div>
@@ -69,10 +69,10 @@ export const DirectoryDropdown = ({ playerName }: DirectoryDropdownProps) => {
           </div>
         </DropdownMenuItem>
         
-        <DropdownMenuSeparator className="bg-comic-dark/20" />
+        <DropdownMenuSeparator className="bg-comic-dark/30 mx-2 my-3" />
         
-        <DropdownMenuItem className="p-3 hover:bg-comic-red/10 transition-colors cursor-pointer">
-          <div className="flex items-center gap-3 w-full">
+        <DropdownMenuItem className="p-0 m-1 cursor-pointer">
+          <div className="flex items-center gap-3 w-full p-3 hover:bg-comic-red/10 transition-colors rounded-xl border-2 border-comic-red/20 hover:border-comic-red/40">
             <div className="w-5 h-5 bg-comic-red rounded text-white text-xs flex items-center justify-center font-bold">!</div>
             <div>
               <div className="font-bold text-comic-red">Logout</div>
