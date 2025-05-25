@@ -43,6 +43,10 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
           <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
             DeBATTLE
           </h1>
+          {/* Bang effect next to title */}
+          <div className="absolute -top-2 -right-8 w-12 h-12 opacity-90 animate-pulse" style={{ animationDelay: '0.5s' }}>
+            <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+          </div>
           <p className="text-xl text-comic-dark font-bold">
             AI-Judged Real-Time Debate Arena
           </p>
@@ -50,11 +54,16 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
         {/* Main Card */}
         <Card className="comic-border bg-white p-6 transform rotate-1 relative">
+          {/* Bang effect on card */}
+          <div className="absolute -top-3 -right-3 w-10 h-10 opacity-80 animate-pulse" style={{ animationDelay: '1.2s' }}>
+            <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+          </div>
+          
           <div className="space-y-6">
             {/* Player Name Input */}
             <div className="space-y-3">
               <label className="text-lg font-bold text-comic-dark">
-                ENTER YOUR BATTLE NAME
+                Enter Your Battle Name
               </label>
               <Input
                 value={playerName}
@@ -122,12 +131,20 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             <Zap className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">AI-Powered Judging</h3>
             <p className="text-sm text-comic-dark">GPT-4 scores your arguments in real-time</p>
+            {/* Bang effect on feature card */}
+            <div className="absolute top-1 right-1 w-6 h-6 opacity-75 animate-pulse" style={{ animationDelay: '0.8s' }}>
+              <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+            </div>
           </div>
           
           <div className="bg-comic-green comic-border p-4 transform rotate-1 relative">
             <Users className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">Health-Based Combat</h3>
             <p className="text-sm text-comic-dark">Lose HP based on debate performance</p>
+            {/* Bang effect on feature card */}
+            <div className="absolute -top-1 -right-1 w-6 h-6 opacity-75 animate-pulse" style={{ animationDelay: '1.3s' }}>
+              <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+            </div>
           </div>
         </div>
       </div>

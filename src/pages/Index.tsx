@@ -35,17 +35,33 @@ const Index = () => {
       <div className="absolute inset-0 bg-gradient-to-tr from-comic-yellow/20 via-transparent to-comic-pink/20" />
       <div className="absolute inset-0 halftone-bg opacity-30" />
       
-      {/* Comic Effects scattered around */}
-      <div className="comic-effect comic-effect-pow top-10 left-20" style={{ animationDelay: '0s' }}></div>
-      <div className="comic-effect comic-effect-boom bottom-32 right-24" style={{ animationDelay: '1.2s' }}></div>
-      <div className="comic-effect comic-effect-zap top-1/3 right-1/4" style={{ animationDelay: '0.8s' }}></div>
-      <div className="comic-effect comic-effect-starburst bottom-20 left-1/3" style={{ animationDelay: '2s' }}></div>
-      <div className="comic-effect comic-effect-explosion top-1/2 left-16" style={{ animationDelay: '1.6s' }}></div>
+      {/* Bang Effects scattered around */}
+      <div className="absolute top-10 left-20 w-16 h-16 opacity-80 animate-pulse" style={{ animationDelay: '0s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
+      <div className="absolute bottom-32 right-24 w-20 h-20 opacity-70 animate-pulse" style={{ animationDelay: '1.2s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
+      <div className="absolute top-1/3 right-1/4 w-12 h-12 opacity-90 animate-pulse" style={{ animationDelay: '0.8s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
+      <div className="absolute bottom-20 left-1/3 w-14 h-14 opacity-75 animate-pulse" style={{ animationDelay: '2s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
+      <div className="absolute top-1/2 left-16 w-18 h-18 opacity-85 animate-pulse" style={{ animationDelay: '1.6s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
       
       {/* Additional smaller effects */}
-      <div className="comic-effect comic-effect-pow comic-effect-small top-20 right-1/3" style={{ animationDelay: '0.4s' }}></div>
-      <div className="comic-effect comic-effect-zap comic-effect-small bottom-40 left-20" style={{ animationDelay: '1.8s' }}></div>
-      <div className="comic-effect comic-effect-starburst comic-effect-medium top-2/3 right-16" style={{ animationDelay: '2.4s' }}></div>
+      <div className="absolute top-20 right-1/3 w-10 h-10 opacity-60 animate-pulse" style={{ animationDelay: '0.4s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
+      <div className="absolute bottom-40 left-20 w-8 h-8 opacity-70 animate-pulse" style={{ animationDelay: '1.8s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
+      <div className="absolute top-2/3 right-16 w-16 h-16 opacity-80 animate-pulse" style={{ animationDelay: '2.4s' }}>
+        <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
+      </div>
       
       {/* Header with dropdowns */}
       <div className="absolute top-4 left-0 right-0 z-50 flex justify-between items-start px-6">
