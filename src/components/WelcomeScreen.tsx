@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { Gamepad2, Users, Zap } from 'lucide-react';
+import { Gamepad2, Users, Zap, Swords } from 'lucide-react';
 
 interface WelcomeScreenProps {
   onJoinRoom: (roomId: string, playerName: string) => void;
@@ -12,10 +12,16 @@ interface WelcomeScreenProps {
 export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
   const [playerName, setPlayerName] = useState('');
   const [roomId, setRoomId] = useState('');
-  const [isCreating, setIsCreating] = useState(false);
 
   const generateRoomId = () => {
     return Math.random().toString(36).substring(2, 8).toUpperCase();
+  };
+
+  const handleJoinMatchmaking = () => {
+    if (!playerName.trim()) return;
+    // For now, simulate matchmaking by creating a room
+    const newRoomId = generateRoomId();
+    onJoinRoom(newRoomId, playerName);
   };
 
   const handleCreateRoom = () => {
@@ -59,25 +65,35 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
               />
             </div>
 
-            {/* Action Buttons */}
-            <div className="space-y-4">
+            {/* Main Matchmaking Button */}
+            <Button
+              onClick={handleJoinMatchmaking}
+              disabled={!playerName.trim()}
+              className="w-full bg-comic-red hover:bg-comic-red/80 text-white font-bold text-xl py-4 comic-border transform hover:scale-105 transition-transform animate-pulse-glow"
+            >
+              <Swords className="mr-2 h-6 w-6" />
+              JOIN DEBATTLE
+            </Button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t-2 border-comic-dark" />
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="bg-white px-2 text-comic-dark font-bold">PLAY WITH FRIENDS</span>
+              </div>
+            </div>
+
+            {/* Friend Play Options */}
+            <div className="space-y-3">
               <Button
                 onClick={handleCreateRoom}
                 disabled={!playerName.trim()}
-                className="w-full bg-comic-red hover:bg-comic-red/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
+                className="w-full bg-comic-blue hover:bg-comic-blue/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
               >
                 <Gamepad2 className="mr-2 h-5 w-5" />
-                CREATE BATTLE ROOM
+                CREATE PRIVATE ROOM
               </Button>
-
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t-2 border-comic-dark" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="bg-white px-2 text-comic-dark font-bold">OR</span>
-                </div>
-              </div>
 
               <div className="space-y-2">
                 <Input
@@ -90,10 +106,10 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
                 <Button
                   onClick={handleJoinRoom}
                   disabled={!playerName.trim() || !roomId.trim()}
-                  className="w-full bg-comic-blue hover:bg-comic-blue/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
+                  className="w-full bg-comic-purple hover:bg-comic-purple/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
                 >
                   <Users className="mr-2 h-5 w-5" />
-                  JOIN BATTLE
+                  JOIN PRIVATE ROOM
                 </Button>
               </div>
             </div>
