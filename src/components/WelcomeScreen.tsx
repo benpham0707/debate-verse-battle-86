@@ -40,15 +40,9 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
       <div className="w-full max-w-md space-y-8 animate-fade-in-up relative z-10">
         {/* Title */}
         <div className="text-center relative">
-          <div className="relative inline-block">
-            <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
-              DeBATTLE
-            </h1>
-            {/* Bang effect next to the title */}
-            <div className="absolute -top-4 -right-16 w-20 h-20 opacity-80 animate-pulse">
-              <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-            </div>
-          </div>
+          <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
+            DeBATTLE
+          </h1>
           <p className="text-xl text-comic-dark font-bold">
             AI-Judged Real-Time Debate Arena
           </p>
@@ -92,14 +86,6 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
             {/* Private Room Options */}
             <div className="space-y-3 relative">
-              {/* Bang effects around private room buttons */}
-              <div className="absolute -top-2 -left-2 w-10 h-10 opacity-80 animate-pulse" style={{ animationDelay: '0.5s' }}>
-                <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-              </div>
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 opacity-75 animate-pulse" style={{ animationDelay: '1.2s' }}>
-                <img src="/lovable-uploads/4b50e222-484a-42e7-891b-86a7fa075523.png" alt="" className="w-full h-full object-contain" />
-              </div>
-              
               <div className="space-y-2">
                 <Input
                   value={roomId}
