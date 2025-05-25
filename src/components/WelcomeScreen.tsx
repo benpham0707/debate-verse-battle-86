@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -37,18 +36,17 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
+      {/* BANG! effect positioned in upper left negative space */}
+      <div className="absolute top-16 left-8 w-40 h-40 opacity-80 animate-pulse transform -rotate-12 z-0">
+        <img src="/lovable-uploads/06fc5a3e-58db-4a85-9c36-d2604465ea15.png" alt="BANG!" className="w-full h-full object-contain" />
+      </div>
+
       <div className="w-full max-w-md space-y-8 animate-fade-in-up relative z-10">
-        {/* Title with BANG effect */}
+        {/* Title */}
         <div className="text-center relative">
-          <div className="relative inline-block">
-            <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
-              DeBATTLE
-            </h1>
-            {/* Large BANG! effect positioned to the right of the title */}
-            <div className="absolute -top-8 -right-24 w-32 h-32 opacity-90 animate-pulse transform rotate-12">
-              <img src="/lovable-uploads/06fc5a3e-58db-4a85-9c36-d2604465ea15.png" alt="BANG!" className="w-full h-full object-contain" />
-            </div>
-          </div>
+          <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
+            DeBATTLE
+          </h1>
           <p className="text-xl text-comic-dark font-bold">
             AI-Judged Real-Time Debate Arena
           </p>
