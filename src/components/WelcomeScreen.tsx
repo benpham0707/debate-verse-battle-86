@@ -38,11 +38,17 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
       <div className="w-full max-w-md space-y-8 animate-fade-in-up relative z-10">
-        {/* Title */}
+        {/* Title with BANG effect */}
         <div className="text-center relative">
-          <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
-            DeBATTLE
-          </h1>
+          <div className="relative inline-block">
+            <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
+              DeBATTLE
+            </h1>
+            {/* Large BANG! effect positioned to the right of the title */}
+            <div className="absolute -top-8 -right-24 w-32 h-32 opacity-90 animate-pulse transform rotate-12">
+              <img src="/lovable-uploads/06fc5a3e-58db-4a85-9c36-d2604465ea15.png" alt="BANG!" className="w-full h-full object-contain" />
+            </div>
+          </div>
           <p className="text-xl text-comic-dark font-bold">
             AI-Judged Real-Time Debate Arena
           </p>
