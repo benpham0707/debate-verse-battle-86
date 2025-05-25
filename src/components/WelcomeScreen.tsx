@@ -36,25 +36,42 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-8 animate-fade-in-up">
+    <div className="min-h-screen flex items-center justify-center p-4 relative">
+      {/* Comic Effects Scattered Around */}
+      <div className="absolute top-20 left-10 comic-explosion w-16 h-16 opacity-60"></div>
+      <div className="absolute top-32 right-20 comic-zap w-12 h-16 opacity-70"></div>
+      <div className="absolute bottom-40 left-16 comic-pow w-20 h-14 opacity-50"></div>
+      <div className="absolute bottom-20 right-32 comic-burst w-18 h-18 opacity-60"></div>
+      
+      {/* Scattered Star Bursts */}
+      <div className="comic-star-burst top-40 right-40" style={{ animationDelay: '0.5s' }}></div>
+      <div className="comic-star-burst bottom-60 left-32" style={{ animationDelay: '1s' }}></div>
+      <div className="comic-star-burst top-60 left-60" style={{ animationDelay: '1.5s' }}></div>
+      <div className="comic-star-burst bottom-32 right-16" style={{ animationDelay: '2s' }}></div>
+
+      <div className="w-full max-w-md space-y-8 animate-fade-in-up relative z-10">
         {/* Title */}
-        <div className="text-center">
-          <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block">
+        <div className="text-center relative">
+          <h1 className="font-bold text-6xl text-comic-dark mb-4 transform -rotate-2 comic-border bg-comic-yellow px-4 py-2 inline-block relative">
             DeBATTLE
+            <div className="comic-impact-lines"></div>
           </h1>
           <p className="text-xl text-comic-dark font-bold">
             AI-Judged Real-Time Debate Arena
           </p>
+          
+          {/* Comic effect behind title */}
+          <div className="absolute -top-4 -left-4 comic-burst w-32 h-16 opacity-30 -z-10"></div>
         </div>
 
         {/* Main Card */}
-        <Card className="comic-border bg-white p-6 transform rotate-1">
+        <Card className="comic-border bg-white p-6 transform rotate-1 relative">
           <div className="space-y-6">
             {/* Player Name Input */}
             <div className="space-y-3">
-              <label className="text-lg font-bold text-comic-dark bg-comic-yellow px-3 py-1 comic-border inline-block transform -rotate-1">
+              <label className="text-lg font-bold text-comic-dark bg-comic-yellow px-3 py-1 comic-border inline-block transform -rotate-1 relative">
                 Enter Your Battle Name
+                <div className="comic-star-burst -top-2 -right-2" style={{ animationDelay: '0.3s' }}></div>
               </label>
               <Input
                 value={playerName}
@@ -69,10 +86,11 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
             <Button
               onClick={handleJoinMatchmaking}
               disabled={!playerName.trim()}
-              className="w-full bg-comic-red hover:bg-comic-red/80 text-white font-bold text-xl py-4 comic-border transform hover:scale-105 transition-transform animate-pulse-glow"
+              className="w-full bg-comic-red hover:bg-comic-red/80 text-white font-bold text-xl py-4 comic-border transform hover:scale-105 transition-transform animate-pulse-glow relative"
             >
               <Swords className="mr-2 h-6 w-6" />
               JOIN DEBATTLE
+              <div className="comic-impact-lines"></div>
             </Button>
 
             <div className="relative">
@@ -114,20 +132,25 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
               </Button>
             </div>
           </div>
+          
+          {/* Comic effect on card */}
+          <div className="absolute -bottom-2 -right-2 comic-zap w-8 h-10 opacity-40"></div>
         </Card>
 
         {/* Feature Cards */}
         <div className="grid grid-cols-1 gap-4 text-center">
-          <div className="bg-comic-yellow comic-border p-4 transform -rotate-1">
+          <div className="bg-comic-yellow comic-border p-4 transform -rotate-1 relative">
             <Zap className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">AI-Powered Judging</h3>
             <p className="text-sm text-comic-dark">GPT-4 scores your arguments in real-time</p>
+            <div className="comic-star-burst top-2 right-2" style={{ animationDelay: '0.8s' }}></div>
           </div>
           
-          <div className="bg-comic-green comic-border p-4 transform rotate-1">
+          <div className="bg-comic-green comic-border p-4 transform rotate-1 relative">
             <Users className="mx-auto h-8 w-8 text-comic-dark mb-2" />
             <h3 className="font-bold text-comic-dark">Health-Based Combat</h3>
             <p className="text-sm text-comic-dark">Lose HP based on debate performance</p>
+            <div className="comic-explosion w-6 h-6 absolute -top-1 -right-1 opacity-50"></div>
           </div>
         </div>
       </div>
