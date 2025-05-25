@@ -52,14 +52,14 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
         <Card className="comic-border bg-white p-6 transform rotate-1">
           <div className="space-y-6">
             {/* Player Name Input */}
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-comic-dark">
+            <div className="space-y-3">
+              <label className="text-lg font-bold text-comic-dark bg-comic-yellow px-3 py-1 comic-border inline-block transform -rotate-1">
                 Enter Your Battle Name
               </label>
               <Input
                 value={playerName}
                 onChange={(e) => setPlayerName(e.target.value)}
-                placeholder="Comic Hero Name..."
+                placeholder="Your Battle Name..."
                 className="comic-border font-bold text-lg"
                 maxLength={20}
               />
@@ -80,21 +80,12 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
                 <div className="w-full border-t-2 border-comic-dark" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="bg-white px-2 text-comic-dark font-bold">PLAY WITH FRIENDS</span>
+                <span className="bg-white px-2 text-comic-dark font-bold">OR</span>
               </div>
             </div>
 
             {/* Friend Play Options */}
             <div className="space-y-3">
-              <Button
-                onClick={handleCreateRoom}
-                disabled={!playerName.trim()}
-                className="w-full bg-comic-blue hover:bg-comic-blue/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
-              >
-                <Gamepad2 className="mr-2 h-5 w-5" />
-                CREATE PRIVATE ROOM
-              </Button>
-
               <div className="space-y-2">
                 <Input
                   value={roomId}
@@ -112,6 +103,15 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
                   JOIN PRIVATE ROOM
                 </Button>
               </div>
+
+              <Button
+                onClick={handleCreateRoom}
+                disabled={!playerName.trim()}
+                className="w-full bg-comic-blue hover:bg-comic-blue/80 text-white font-bold text-lg py-3 comic-border transform hover:scale-105 transition-transform"
+              >
+                <Gamepad2 className="mr-2 h-5 w-5" />
+                CREATE PRIVATE ROOM
+              </Button>
             </div>
           </div>
         </Card>
