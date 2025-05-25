@@ -36,6 +36,11 @@ export const WelcomeScreen = ({ onJoinRoom }: WelcomeScreenProps) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative">
+      {/* Large comic effects background */}
+      <div className="absolute inset-0 w-full h-full opacity-20 z-0">
+        <img src="/lovable-uploads/50497052-0fd4-4a33-a7e2-4c44c83f05eb.png" alt="Comic Effects" className="w-full h-full object-cover" />
+      </div>
+
       {/* BANG! effect positioned bigger and much lower in the left side */}
       <div className="absolute top-[600px] left-2 w-80 h-80 opacity-80 animate-pulse transform -rotate-12 z-0">
         <img src="/lovable-uploads/06fc5a3e-58db-4a85-9c36-d2604465ea15.png" alt="BANG!" className="w-full h-full object-contain" />
