@@ -13,7 +13,7 @@ import { ChevronDown, Bell } from 'lucide-react';
 export const NewsDropdown = () => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="comic-border bg-gradient-to-r from-comic-orange to-comic-yellow text-comic-dark px-4 py-2 font-bold text-sm hover:from-comic-yellow hover:to-comic-orange transition-all duration-300 transform hover:scale-105 flex items-center gap-2 rounded-xl">
+      <DropdownMenuTrigger className="comic-border bg-gradient-to-r from-comic-orange to-comic-yellow text-white px-4 py-2 font-bold text-sm hover:from-comic-yellow hover:to-comic-orange transition-all duration-300 transform hover:scale-105 flex items-center gap-2 rounded-xl">
         <Bell className="h-4 w-4" />
         NEWS & UPDATES
         <ChevronDown className="h-4 w-4" />
