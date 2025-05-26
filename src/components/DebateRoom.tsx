@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -137,17 +138,17 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
     <div className="min-h-screen p-4">
       <div className="max-w-6xl mx-auto space-y-4">
         {/* Topic Header - Comic Panel Style */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <div className="relative inline-block">
-            <div className="comic-panel bg-gradient-to-r from-comic-yellow via-comic-orange to-comic-red p-6 max-w-4xl">
-              <h1 className="font-bold text-4xl text-comic-dark drop-shadow-lg transform -rotate-1">
+            <div className="comic-panel bg-gradient-to-r from-comic-yellow via-comic-orange to-comic-red p-4 max-w-3xl">
+              <h1 className="font-bold text-2xl text-comic-dark drop-shadow-lg transform -rotate-1">
                 {topic}
               </h1>
             </div>
             {/* Speech bubble tail */}
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-              <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-t-[20px] border-l-transparent border-r-transparent border-t-black"></div>
-              <div className="w-0 h-0 border-l-[16px] border-r-[16px] border-t-[16px] border-l-transparent border-r-transparent border-t-comic-orange absolute top-[-18px] left-1/2 transform -translate-x-1/2"></div>
+            <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+              <div className="w-0 h-0 border-l-[16px] border-r-[16px] border-t-[16px] border-l-transparent border-r-transparent border-t-black"></div>
+              <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-comic-orange absolute top-[-14px] left-1/2 transform -translate-x-1/2"></div>
             </div>
           </div>
         </div>
@@ -157,14 +158,14 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
           <Button 
             onClick={onBack}
             variant="outline"
-            className="comic-border bg-white hover:bg-gray-50"
+            className="bg-white hover:bg-gray-50"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Exit Battle
           </Button>
           
           <div className="text-center">
-            <Badge className="bg-gray-600 text-white font-bold text-lg px-4 py-2 comic-border">
+            <Badge className="bg-gray-600 text-white font-bold text-lg px-4 py-2">
               ROOM: {roomId}
             </Badge>
           </div>
