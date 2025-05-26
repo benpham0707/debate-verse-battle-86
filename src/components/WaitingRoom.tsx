@@ -64,21 +64,18 @@ export const WaitingRoom = ({ roomId, playerName, onLeaveRoom, onStartDebate }: 
       <div className="absolute inset-0 bg-gradient-to-br from-comic-red/20 via-comic-purple/20 to-comic-blue/20" />
       
       <div className="w-full max-w-6xl space-y-8 animate-fade-in relative z-10">
-        {/* Header */}
+        {/* Header - Room Code */}
         <div className="text-center">
-          <h1 className="font-bold text-5xl text-comic-dark mb-4 transform -rotate-1 comic-border bg-comic-yellow px-4 py-2 inline-block">
-            BATTLE ARENA
-          </h1>
           <div className="mt-6 bg-comic-dark text-white px-6 py-3 comic-border inline-block transform rotate-1">
             <span className="text-lg font-bold">Room Code: {roomId}</span>
           </div>
         </div>
 
-        {/* Battle Topic */}
+        {/* Battle Arena Title */}
         <div className="text-center">
-          <div className="bg-comic-green text-white px-6 py-3 comic-border inline-block transform -rotate-1">
-            <h2 className="font-bold text-xl">🎯 TOPIC: "Should AI be regulated?"</h2>
-          </div>
+          <h1 className="font-bold text-5xl text-comic-dark mb-4 transform -rotate-1 comic-border bg-comic-yellow px-4 py-2 inline-block">
+            BATTLE ARENA
+          </h1>
         </div>
 
         {/* Main Battle Arena */}
