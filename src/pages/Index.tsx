@@ -4,10 +4,11 @@ import { WelcomeScreen } from '@/components/WelcomeScreen';
 import { GameLobby } from '@/components/GameLobby';
 import { DebateRoom } from '@/components/DebateRoom';
 import { WaitingRoom } from '@/components/WaitingRoom';
+import { MatchmakingScreen } from '@/components/MatchmakingScreen';
 import { NewsDropdown } from '@/components/NewsDropdown';
 import { DirectoryDropdown } from '@/components/DirectoryDropdown';
 
-export type GameState = 'welcome' | 'lobby' | 'waiting' | 'debate';
+export type GameState = 'welcome' | 'matchmaking' | 'lobby' | 'waiting' | 'debate';
 
 const Index = () => {
   const [gameState, setGameState] = useState<GameState>('welcome');
@@ -15,8 +16,12 @@ const Index = () => {
   const [playerName, setPlayerName] = useState<string>('');
 
   const handleJoinMatchmaking = (room: string, name: string) => {
-    setRoomId(room);
     setPlayerName(name);
+    setGameState('matchmaking');
+  };
+
+  const handleMatchFound = (foundRoomId: string) => {
+    setRoomId(foundRoomId);
     setGameState('lobby');
   };
 
@@ -57,6 +62,14 @@ const Index = () => {
           <WelcomeScreen 
             onJoinRoom={handleJoinMatchmaking}
             onJoinPrivateRoom={handleJoinPrivateRoom}
+          />
+        )}
+
+        {gameState === 'matchmaking' && (
+          <MatchmakingScreen
+            playerName={playerName}
+            onMatchFound={handleMatchFound}
+            onCancel={handleBackToWelcome}
           />
         )}
         
