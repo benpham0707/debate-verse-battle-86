@@ -13,23 +13,11 @@ interface WaitingRoomProps {
   onStartDebate?: () => void;
 }
 
-const DEBATE_TOPICS = [
-  "Should AI be heavily regulated by governments?",
-  "Is social media more harmful than beneficial to society?",
-  "Should universal basic income be implemented globally?",
-  "Is remote work better than in-person work?",
-  "Should video games be considered a sport?",
-  "Is privacy more important than security?",
-  "Should college education be free for everyone?",
-  "Is climate change action more important than economic growth?"
-];
-
 export const WaitingRoom = ({ roomId, playerName, onLeaveRoom, onStartDebate }: WaitingRoomProps) => {
   const [isReady, setIsReady] = useState(false);
   const [opponentReady, setOpponentReady] = useState(false);
   const [countdown, setCountdown] = useState(10);
   const [showCountdown, setShowCountdown] = useState(false);
-  const [currentTopic] = useState(DEBATE_TOPICS[Math.floor(Math.random() * DEBATE_TOPICS.length)]);
 
   const battleReadyQuotes = [
     "Time to prove my point!",
@@ -76,28 +64,18 @@ export const WaitingRoom = ({ roomId, playerName, onLeaveRoom, onStartDebate }: 
       <div className="absolute inset-0 bg-gradient-to-br from-comic-red/20 via-comic-purple/20 to-comic-blue/20" />
       
       <div className="w-full max-w-6xl space-y-8 animate-fade-in relative z-10">
-        {/* Topic Header */}
+        {/* Header - Room Code */}
         <div className="text-center">
-          <h1 className="font-bold text-3xl text-comic-dark mb-4 comic-border bg-comic-yellow px-6 py-4 inline-block">
-            DEBATE TOPIC
-          </h1>
-          <div className="speech-bubble max-w-2xl mx-auto">
-            <p className="font-bold text-comic-dark text-xl">{currentTopic}</p>
-          </div>
-        </div>
-
-        {/* Room Code */}
-        <div className="text-center">
-          <div className="bg-white border-2 border-gray-300 px-6 py-3 inline-block rounded">
-            <span className="text-lg font-bold text-gray-700">Room Code: {roomId}</span>
+          <div className="mt-6 bg-comic-dark text-white px-6 py-3 comic-border inline-block transform rotate-1">
+            <span className="text-lg font-bold">Room Code: {roomId}</span>
           </div>
         </div>
 
         {/* Battle Arena Title */}
         <div className="text-center">
-          <h2 className="font-bold text-4xl text-comic-dark mb-4 transform -rotate-1 comic-border bg-comic-orange px-4 py-2 inline-block">
+          <h1 className="font-bold text-5xl text-comic-dark mb-4 transform -rotate-1 comic-border bg-comic-yellow px-4 py-2 inline-block">
             BATTLE ARENA
-          </h2>
+          </h1>
         </div>
 
         {/* Main Battle Arena */}
