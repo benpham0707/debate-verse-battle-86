@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,17 +62,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Enhanced Spider-Verse Comic Colors with more depth
+				// Muted Comic Book Colors - more like traditional print comics
 				comic: {
-					red: '#DC143C',        // Deeper crimson
-					blue: '#0047AB',       // Royal blue
-					yellow: '#FFB000',     // Rich amber
-					pink: '#E91E63',       // Vivid pink
-					purple: '#7B1FA2',     // Deep purple
-					green: '#00C853',      // Vibrant green
-					orange: '#FF8F00',     // Deep orange
-					dark: '#0D1117',       // Rich black
-					light: '#FAFAFA'       // Pure white
+					red: '#C53030',        // Muted red
+					blue: '#2B6CB0',       // Muted blue
+					yellow: '#D69E2E',     // Muted yellow/gold
+					pink: '#B83280',       // Muted pink
+					purple: '#6B46C1',     // Muted purple
+					green: '#38A169',      // Muted green
+					orange: '#DD6B20',     // Muted orange
+					dark: '#2D3748',       // Dark gray instead of pure black
+					light: '#F7FAFC'       // Off-white
 				}
 			},
 			borderRadius: {
@@ -116,10 +115,10 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 10px rgba(255, 23, 68, 0.5), 0 0 20px rgba(0, 102, 255, 0.3)' 
+						boxShadow: '0 0 10px rgba(197, 48, 48, 0.5), 0 0 20px rgba(43, 108, 176, 0.3)' 
 					},
 					'50%': { 
-						boxShadow: '0 0 25px rgba(255, 23, 68, 0.8), 0 0 35px rgba(0, 102, 255, 0.6)' 
+						boxShadow: '0 0 25px rgba(197, 48, 48, 0.8), 0 0 35px rgba(43, 108, 176, 0.6)' 
 					}
 				},
 				'bounce-in': {
