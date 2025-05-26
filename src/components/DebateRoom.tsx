@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -143,26 +144,31 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
       <div className="comic-effect comic-effect-explosion comic-effect-small top-20 left-20" style={{ animationDelay: '2.2s' }}></div>
 
       <div className="max-w-6xl mx-auto space-y-4 relative z-10">
+        {/* Topic Header */}
+        <div className="text-center mb-6">
+          <h1 className="font-bold text-3xl text-comic-dark mb-2 comic-border bg-comic-yellow px-6 py-3 inline-block">
+            {topic}
+          </h1>
+        </div>
+
         {/* Header */}
         <div className="flex items-center justify-between">
           <Button 
             onClick={onBack}
             variant="outline"
-            className="comic-border bg-white hover:bg-gray-50 relative"
+            className="comic-border bg-white hover:bg-gray-50"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Exit Battle
           </Button>
           
-          <div className="text-center relative">
-            <Badge className="bg-comic-blue text-white font-bold text-lg px-4 py-2 mb-2 comic-border relative">
+          <div className="text-center">
+            <Badge className="bg-gray-600 text-white font-bold text-lg px-4 py-2 comic-border">
               ROOM: {roomId}
-              <div className="comic-impact-lines"></div>
             </Badge>
-            <h2 className="font-bold text-xl text-comic-dark">{topic}</h2>
           </div>
           
-          <div className="relative">
+          <div>
             <DebateTimer timeRemaining={timeRemaining} phase={currentPhase} />
           </div>
         </div>
