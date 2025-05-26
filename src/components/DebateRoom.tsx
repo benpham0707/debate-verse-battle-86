@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -135,20 +134,22 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
   };
 
   return (
-    <div className="min-h-screen p-4 relative">
-      {/* Comic Effects Background */}
-      <div className="comic-effect comic-effect-boom comic-effect-small top-10 right-20" style={{ animationDelay: '0.5s' }}></div>
-      <div className="comic-effect comic-effect-zap bottom-20 left-10" style={{ animationDelay: '1.2s' }}></div>
-      <div className="comic-effect comic-effect-pow comic-effect-medium top-1/3 left-1/4" style={{ animationDelay: '0.8s' }}></div>
-      <div className="comic-effect comic-effect-starburst comic-effect-small bottom-40 right-40" style={{ animationDelay: '1.8s' }}></div>
-      <div className="comic-effect comic-effect-explosion comic-effect-small top-20 left-20" style={{ animationDelay: '2.2s' }}></div>
-
-      <div className="max-w-6xl mx-auto space-y-4 relative z-10">
-        {/* Topic Header */}
-        <div className="text-center mb-6">
-          <h1 className="font-bold text-3xl text-comic-dark mb-2 comic-border bg-comic-yellow px-6 py-3 inline-block">
-            {topic}
-          </h1>
+    <div className="min-h-screen p-4">
+      <div className="max-w-6xl mx-auto space-y-4">
+        {/* Topic Header - Comic Panel Style */}
+        <div className="text-center mb-8">
+          <div className="relative inline-block">
+            <div className="comic-panel bg-gradient-to-r from-comic-yellow via-comic-orange to-comic-red p-6 max-w-4xl">
+              <h1 className="font-bold text-4xl text-comic-dark drop-shadow-lg transform -rotate-1">
+                {topic}
+              </h1>
+            </div>
+            {/* Speech bubble tail */}
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+              <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-t-[20px] border-l-transparent border-r-transparent border-t-black"></div>
+              <div className="w-0 h-0 border-l-[16px] border-r-[16px] border-t-[16px] border-l-transparent border-r-transparent border-t-comic-orange absolute top-[-18px] left-1/2 transform -translate-x-1/2"></div>
+            </div>
+          </div>
         </div>
 
         {/* Header */}
@@ -176,7 +177,7 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
         {/* Players Health */}
         <div className="grid grid-cols-2 gap-4">
           {players.map((player, index) => (
-            <Card key={index} className="comic-border bg-white p-4 relative">
+            <Card key={index} className="comic-border bg-white p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="font-bold text-comic-dark">{player.name}</span>
                 <Badge className={`${player.side === 'pro' ? 'bg-comic-green' : 'bg-comic-red'} text-white font-bold comic-border`}>
@@ -184,14 +185,12 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                 </Badge>
               </div>
               <HealthBar health={player.health} maxHealth={100} />
-              {index === 0 && <div className="comic-effect comic-effect-pow comic-effect-small top-2 right-2" style={{ animationDelay: '1.5s' }}></div>}
-              {index === 1 && <div className="comic-effect comic-effect-zap comic-effect-small top-2 right-2" style={{ animationDelay: '2s' }}></div>}
             </Card>
           ))}
         </div>
 
         {/* Phase Info */}
-        <Card className="comic-border bg-comic-yellow/20 p-4 relative">
+        <Card className="comic-border bg-comic-yellow/20 p-4">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-bold text-comic-dark text-lg">{getPhaseDescription()}</h3>
@@ -202,19 +201,17 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
             <Button
               onClick={() => setIsMuted(!isMuted)}
               variant="outline"
-              className="comic-border relative"
+              className="comic-border"
             >
               {isMuted ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
-              {!isMuted && <div className="comic-impact-lines"></div>}
             </Button>
           </div>
-          <div className="comic-effect comic-effect-explosion comic-effect-small -top-2 -left-2" style={{ animationDelay: '0.7s' }}></div>
         </Card>
 
         {/* Chat Area */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Messages */}
-          <Card className="lg:col-span-2 comic-border bg-white p-4 h-96 relative">
+          <Card className="lg:col-span-2 comic-border bg-white p-4 h-96">
             <div className="h-full flex flex-col">
               <div className="flex-1 overflow-y-auto space-y-3 mb-4">
                 {messages.map((message) => (
@@ -245,26 +242,24 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
                 <Button
                   onClick={handleSendMessage}
                   disabled={!isMyTurn || !newMessage.trim() || currentPhase === 'judging' || currentPhase === 'complete'}
-                  className="bg-comic-blue hover:bg-comic-blue/80 text-white comic-border relative"
+                  className="bg-comic-blue hover:bg-comic-blue/80 text-white comic-border"
                 >
                   <Send className="h-4 w-4" />
-                  <div className="comic-impact-lines"></div>
                 </Button>
               </div>
             </div>
-            <div className="comic-effect comic-effect-starburst comic-effect-small -bottom-1 -right-1" style={{ animationDelay: '1.3s' }}></div>
           </Card>
 
           {/* Battle Stats */}
-          <Card className="comic-border bg-white p-4 relative">
+          <Card className="comic-border bg-white p-4">
             <h3 className="font-bold text-comic-dark text-lg mb-4">BATTLE STATS</h3>
             <div className="space-y-3">
-              <div className="p-3 bg-comic-green/20 comic-border relative">
+              <div className="p-3 bg-comic-green/20 comic-border">
                 <p className="text-sm font-bold text-comic-dark">Current Phase</p>
                 <p className="text-lg font-bold text-comic-green">{currentPhase.toUpperCase()}</p>
               </div>
               
-              <div className="p-3 bg-comic-blue/20 comic-border relative">
+              <div className="p-3 bg-comic-blue/20 comic-border">
                 <p className="text-sm font-bold text-comic-dark">Time Left</p>
                 <p className="text-lg font-bold text-comic-blue">{timeRemaining}s</p>
               </div>
@@ -275,17 +270,14 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
               </div>
 
               {currentPhase === 'complete' && (
-                <div className="p-3 bg-comic-yellow comic-border relative">
+                <div className="p-3 bg-comic-yellow comic-border">
                   <p className="text-sm font-bold text-comic-dark">Winner</p>
                   <p className="text-lg font-bold text-comic-red">
                     {players[0].health > players[1].health ? players[0].name : players[1].name}
                   </p>
-                  <div className="comic-effect comic-effect-boom comic-effect-small -top-2 -right-2" style={{ animationDelay: '0.5s' }}></div>
-                  <div className="comic-impact-lines"></div>
                 </div>
               )}
             </div>
-            <div className="comic-effect comic-effect-pow comic-effect-small -top-2 -left-2" style={{ animationDelay: '1.8s' }}></div>
           </Card>
         </div>
       </div>
