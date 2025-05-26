@@ -66,25 +66,17 @@ export const WaitingRoom = ({ roomId, playerName, onLeaveRoom, onStartDebate }: 
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-comic-blue via-comic-purple to-comic-red relative overflow-hidden">
-      {/* Cleaner background pattern */}
-      <div className="absolute inset-0 opacity-20" 
-           style={{
-             backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)',
-             backgroundSize: '30px 30px'
-           }} />
+      {/* Background with halftone design */}
+      <div className="absolute inset-0 halftone-bg opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-comic-yellow/20 via-transparent to-comic-pink/20" />
       
       <div className="min-h-screen flex flex-col items-center justify-center p-6 relative z-10">
         
-        {/* Header Section */}
+        {/* Header Section - matching format from other screens */}
         <div className="text-center mb-12">
-          <div className="relative inline-block">
-            <h1 className="text-6xl font-bold text-white comic-border bg-comic-yellow px-8 py-4 transform -rotate-2 inline-block shadow-2xl">
-              BATTLE ARENA
-            </h1>
-            <div className="absolute -top-3 -right-3 bg-comic-red comic-border rounded-full w-16 h-16 flex items-center justify-center transform rotate-12 animate-pulse">
-              <Swords className="h-8 w-8 text-white" />
-            </div>
-          </div>
+          <h1 className="font-bold text-5xl text-comic-dark mb-4 transform -rotate-1 comic-border bg-comic-yellow px-4 py-2 inline-block">
+            BATTLE ARENA
+          </h1>
           
           <div className="mt-6 bg-comic-dark text-white px-6 py-3 comic-border inline-block transform rotate-1">
             <span className="text-lg font-bold">Room Code: {roomId}</span>
@@ -219,15 +211,6 @@ export const WaitingRoom = ({ roomId, playerName, onLeaveRoom, onStartDebate }: 
             <Zap className="mr-3 h-6 w-6" />
             {isReady ? 'READY FOR BATTLE!' : 'GET READY!'}
           </Button>
-        </div>
-
-        {/* Floating comic effects */}
-        <div className="absolute top-32 left-16 bg-comic-orange comic-border rounded-full w-20 h-20 flex items-center justify-center transform rotate-45 animate-bounce opacity-70">
-          <span className="text-white font-bold text-sm">POW!</span>
-        </div>
-        
-        <div className="absolute bottom-32 right-16 bg-comic-pink comic-border rounded-full w-16 h-16 flex items-center justify-center transform -rotate-45 animate-pulse opacity-70">
-          <span className="text-white font-bold text-xs">BOOM!</span>
         </div>
       </div>
     </div>
