@@ -141,7 +141,7 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
         <div className="text-center mb-6">
           <div className="relative inline-block">
             <div className="comic-panel bg-gradient-to-r from-comic-yellow via-comic-orange to-comic-red p-4 max-w-3xl">
-              <h1 className="font-bold text-2xl text-comic-dark drop-shadow-lg transform -rotate-1">
+              <h1 className="font-bold text-2xl text-comic-dark drop-shadow-lg">
                 {topic}
               </h1>
             </div>
