@@ -165,7 +165,7 @@ export const DebateRoom = ({ roomId, playerName, onBack }: DebateRoomProps) => {
           </Button>
           
           <div className="text-center">
-            <Badge className="bg-gray-600 text-white font-bold text-lg px-4 py-2">
+            <Badge className="bg-white text-black border-4 border-black font-bold text-lg px-4 py-2 comic-border">
               ROOM: {roomId}
             </Badge>
           </div>
