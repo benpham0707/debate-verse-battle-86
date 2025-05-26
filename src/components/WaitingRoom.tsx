@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -82,35 +81,9 @@ export const WaitingRoom = ({ roomId, playerName, onLeaveRoom, onStartDebate }: 
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
-      {/* Enhanced Background Effects with Multiple Halftone Layers */}
+      {/* Simplified Background - keeping original halftone-bg only */}
       <div className="absolute inset-0 halftone-bg opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-br from-comic-red/20 via-comic-purple/20 to-comic-blue/20" />
-      
-      {/* Additional Halftone Patterns */}
-      <div 
-        className="absolute inset-0 opacity-15"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle, #FF1744 2px, transparent 2px),
-            radial-gradient(circle, #0066FF 1.5px, transparent 1.5px),
-            radial-gradient(circle, #FFD600 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px, 60px 60px, 25px 25px',
-          backgroundPosition: '0 0, 20px 20px, 10px 10px'
-        }}
-      />
-      
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle, #FF0080 3px, transparent 3px),
-            radial-gradient(circle, #8E24AA 2px, transparent 2px)
-          `,
-          backgroundSize: '80px 80px, 50px 50px',
-          backgroundPosition: '40px 40px, 15px 15px'
-        }}
-      />
       
       {/* Header Section with Halftone Border */}
       <div className="text-center mb-8 relative z-10">
