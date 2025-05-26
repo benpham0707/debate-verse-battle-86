@@ -22,7 +22,8 @@ const Index = () => {
 
   const handleMatchFound = (foundRoomId: string) => {
     setRoomId(foundRoomId);
-    setGameState('lobby');
+    // Go directly to debate room instead of lobby
+    setGameState('debate');
   };
 
   const handleJoinPrivateRoom = (room: string, name: string) => {
